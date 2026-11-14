@@ -1,6 +1,7 @@
 """ORM-моделі таблиць"""
 from sqlalchemy import Column, DateTime, Double, Enum, ForeignKey, Integer, String, Time
 from sqlalchemy.orm import DeclarativeBase, relationship
+from sqlalchemy import Boolean, Column, DateTime, Double, Enum, ForeignKey, Integer, String, Time
 
 WIND_DIRECTIONS = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE",
                    "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"]
@@ -41,5 +42,6 @@ class Astronomy(Base):
     moonset = Column(Time)                                 # час
     moon_phase = Column(Enum(*MOON_PHASES, name="moon_phase_enum"))  # enum
     moon_illumination = Column(Integer)                    # ціле, %
+    go_outside = Column(Boolean, nullable=False)           # "Чи варто виходити на вулицю"
 
     weather = relationship("Weather", back_populates="astronomy")
