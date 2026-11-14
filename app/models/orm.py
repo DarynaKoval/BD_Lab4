@@ -1,5 +1,4 @@
 """ORM-моделі таблиць"""
-from sqlalchemy import Column, DateTime, Double, Enum, ForeignKey, Integer, String, Time
 from sqlalchemy.orm import DeclarativeBase, relationship
 from sqlalchemy import Boolean, Column, DateTime, Double, Enum, ForeignKey, Integer, String, Time
 
